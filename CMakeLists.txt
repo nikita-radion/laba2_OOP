@@ -4,15 +4,12 @@ project(four)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Добавляем директории с заголовочными файлами
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# Создаем библиотеку из исходных файлов
 add_library(four_lib
     src/four.cpp
 )
 
-# Добавляем Google Test
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -20,7 +17,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-# Тесты
 add_executable(four_test
     tests/four_test.cpp
 )
